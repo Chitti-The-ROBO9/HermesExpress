@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  background: #020617;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: #020617;
+}
+
+.range-pulse {
+  animation: ringPulse 2.3s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+  0% {
+    stroke-opacity: 0.45;
+    fill-opacity: 0.2;
+  }
+  50% {
+    stroke-opacity: 0.9;
+    fill-opacity: 0.35;
+  }
+  100% {
+    stroke-opacity: 0.45;
+    fill-opacity: 0.2;
+  }
+}
+
+.cx-marker {
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  border: 2px solid #22d3ee;
+  background: rgba(34, 211, 238, 0.4);
+  box-shadow: 0 0 14px rgba(34, 211, 238, 0.75);
+}
+
+.hex-marker {
+  width: 22px;
+  height: 22px;
+  background: rgba(244, 63, 94, 0.65);
+  border: 2px solid #f43f5e;
+  clip-path: polygon(25% 3%, 75% 3%, 100% 50%, 75% 97%, 25% 97%, 0% 50%);
+  box-shadow: 0 0 16px rgba(244, 63, 94, 0.7);
+  animation: hexPulse 1.2s ease-in-out infinite;
+}
+
+.fuel-marker {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  border: 2px solid #facc15;
+  background: rgba(250, 204, 21, 0.3);
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.6);
+}
+
+.gps-marker {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  border: 2px solid #38bdf8;
+  background: rgba(56, 189, 248, 0.9);
+  box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.75);
+  animation: gpsPulse 1.6s ease-out infinite;
+}
+
+@keyframes hexPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes gpsPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.75);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(56, 189, 248, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+  }
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(51, 65, 85, 0.8);
+  color: #e2e8f0;
+}
+
+.leaflet-popup-tip {
+  background: rgba(15, 23, 42, 0.96);
+}
